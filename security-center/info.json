@@ -1,0 +1,243 @@
+{
+  "name": "security-center",
+  "label": "Tenable Security Center",
+  "version": "1.0.0",
+  "description": "Tenable Security Center provide actions like get all completed scans, scan specific assets and asset specific vulnerabilities",
+  "publisher": "CyberSponse",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "category": "Vulnerability Management",
+  "icon_small_name": "sc_small.png",
+  "icon_large_name": "sc_large.png",
+  "help_online": "https://help.cybersponse.com/support/solutions/articles/17000065312-security-center-v-1-0-0",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "type": "text",
+        "name": "server",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "value": ""
+      },
+      {
+        "title": "Username",
+        "type": "text",
+        "name": "username",
+        "required": true,
+        "editable": true,
+        "visible": true
+      },
+      {
+        "title": "Password",
+        "type": "password",
+        "name": "password",
+        "required": true,
+        "editable": true,
+        "visible": true
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_all_scans",
+      "title": "List Completed Scans",
+      "description": "Provides all latest completed scans for given time duration",
+      "enabled": true,
+      "annotation": "search_scans",
+      "category": "investigation",
+      "output_schema": {
+        "scans_records": {},
+        "name_id_mapping": {},
+        "message": ""
+      },
+      "parameters": [
+        {
+          "title": "Completion Time",
+          "type": "select",
+          "name": "days",
+          "options": [
+            "Last Fetch",
+            "Last 24 Hours",
+            "Last 3 Days",
+            "Last 5 Days",
+            "Last 7 Days",
+            "Last 15 Days",
+            "Last 25 Days",
+            "Last 30 Days",
+            "Last 50 Days",
+            "Last 60 Days",
+            "Last 90 Days",
+            "Last 120 Days",
+            "Last 180 Days"
+          ],
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "value": "Last 7 Days"
+        }
+      ]
+    },
+    {
+      "operation": "get_all_assets",
+      "title": "List Assets",
+      "description": "List scan specific assets",
+      "enabled": true,
+      "annotation": "get_endpoints",
+      "category": "investigation",
+      "output_schema": {
+        "assets_records": [
+          {
+            "assets": [
+              {
+                "policyName": "",
+                "mcafeeGUID": "",
+                "macAddress": "",
+                "repository": {
+                  "name": "",
+                  "id": "",
+                  "description": ""
+                },
+                "severityInfo": "",
+                "netbiosName": "",
+                "pluginSet": "",
+                "severityCritical": "",
+                "score": "",
+                "lastUnauthRun": "",
+                "tpmID": "",
+                "total": "",
+                "osCPE": "",
+                "biosGUID": "",
+                "severityMedium": "",
+                "severityHigh": "",
+                "dnsName": "",
+                "lastAuthRun": "",
+                "ip": "",
+                "severityLow": ""
+              }
+            ],
+            "scan_name": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Scan Information",
+          "type": "text",
+          "name": "scan_details",
+          "editable": true,
+          "visible": true,
+          "required": true,
+          "value": ""
+        }
+      ]
+    },
+    {
+      "operation": "get_asset_vulns",
+      "title": "List Asset Vulnerabilities",
+      "description": "Get asset specific vulnerabilities",
+      "enabled": true,
+      "annotation": "get_vulnerabilities",
+      "category": "investigation",
+      "output_schema": {
+        "message": "",
+        "vulns_data": [
+          {
+            "synopsis": "",
+            "patchPubDate": "",
+            "pluginText": "",
+            "exploitFrameworks": "",
+            "description": "",
+            "acceptRisk": "",
+            "riskFactor": "",
+            "seeAlso": "",
+            "recastRisk": "",
+            "family": {
+              "name": "",
+              "id": "",
+              "type": ""
+            },
+            "cpe": "",
+            "protocol": "",
+            "temporalScore": "",
+            "exploitAvailable": "",
+            "solution": "",
+            "pluginPubDate": "",
+            "bid": "",
+            "checkType": "",
+            "hasBeenMitigated": "",
+            "pluginInfo": "",
+            "xref": "",
+            "pluginID": "",
+            "macAddress": "",
+            "repository": {
+              "name": "",
+              "id": "",
+              "description": ""
+            },
+            "pluginName": "",
+            "severity": {
+              "name": "",
+              "id": "",
+              "description": ""
+            },
+            "firstSeen": "",
+            "baseScore": "",
+            "cve": "",
+            "lastSeen": "",
+            "vulnPubDate": "",
+            "port": "",
+            "exploitEase": "",
+            "version": "",
+            "dnsName": "",
+            "pluginModDate": "",
+            "ip": "",
+            "netbiosName": "",
+            "cvssVector": "",
+            "stigSeverity": ""
+          }
+        ],
+        "asset_param": ""
+      },
+      "parameters": [
+        {
+          "title": "IP/MAC/Hostname",
+          "type": "text",
+          "name": "asset_info",
+          "editable": true,
+          "visible": true,
+          "required": true,
+          "value": ""
+        },
+        {
+          "title": "Scan ID",
+          "type": "text",
+          "name": "scan_id",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        },
+        {
+          "title": "Scan Name",
+          "type": "text",
+          "name": "scan_name",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        }
+      ]
+    }
+  ]
+}

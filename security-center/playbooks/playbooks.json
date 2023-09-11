@@ -1,0 +1,1125 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample-Tenable-Security-Center-1.0.0",
+      "description": "Tenable Security Center provide actions like get all completed scans, scan specific assets and asset specific vulnerabilities",
+      "visible": true,
+      "image": "/api/3/images/5a818ec7097df185168b4567",
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "1.1 List Completed Scan",
+          "description": "Get all latest completed scans between specific time.",
+          "collection": "/api/3/workflow_collections/6d86c1bb-c132-46af-ac41-0eb271f1c12e",
+          "tag": "#Security  Center",
+          "isActive": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/52c199fb-751e-4606-acfa-49f83f1a9208",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "List Scans",
+              "arguments": {
+                "name": "Tenable Security Center",
+                "config": "1c5b1a56-c39b-4b0c-9967-db844016bf9b",
+                "params": {
+                  "days": "Last 7 Days"
+                },
+                "version": "1.0.0",
+                "connector": "security-center",
+                "operation": "get_all_scans",
+                "annotation": {
+                  "id": 440,
+                  "name": "search_scans",
+                  "system": false,
+                  "category": "investigation",
+                  "connectors": [
+                    288
+                  ],
+                  "displayName": "Search Scans",
+                  "connectorsData": [
+                    {
+                      "id": 288,
+                      "name": "security-center",
+                      "label": "Tenable Security Center",
+                      "version": "1.0.0",
+                      "icon_small": "data:image/jpeg;base64,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",
+                      "operations": [
+                        {
+                          "title": "List Completed Scans",
+                          "operation": "get_all_scans",
+                          "description": "Provides all latest completed scans for given time duration"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "operationTitle": "List Completed Scans",
+                "step_variables": {
+                  "scan_details": "{{ vars.result.data.scans_records.values() | list }}",
+                  "scan_records": "{{vars.result.data.scans_records}}",
+                  "name_id_mapping": "{{vars.result.data['name_id_mapping']}}"
+                }
+              },
+              "status": null,
+              "left": "285",
+              "top": "200",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "179f42de-1124-4e31-8668-0a90040a495d"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Search scan records match on field name in CyOPs",
+              "arguments": {
+                "when": "{{vars.steps.List_Scans.data.scans_records.values() | list | length > 0}}",
+                "script": "/wf/workflow/tasks/crudhub_crud",
+                "arguments": {
+                  "method": "POST",
+                  "resource": "{\"logic\": \"OR\", \"filters\": {{vars.steps.List_Scans.data.scans_records.values() | list | json_query(\"[].{field:'name', operator: 'eq', value:name }\") }} }",
+                  "collection": "/api/query/{{vars.scan_table_name}}?$export=true&$limit={{vars.record_limit}}"
+                },
+                "step_variables": {
+                  "exist_scan_name_list": "{{ vars.result[\"hydra:member\"] | json_query(\"[].[name][]\") }}",
+                  "_temp_update_scan_iri_name": "{% for item in vars.result['hydra:member'] %} \t{{ vars.scan_name_iri.update({item['name']: '/api/3/' + vars.scan_table_name + '/' + item['uuid']}) }} {% endfor %}"
+                }
+              },
+              "status": null,
+              "left": "434",
+              "top": "291",
+              "stepType": "/api/3/workflow_step_types/ee73e569-2188-43fe-a7f0-1964ba82a4de",
+              "uuid": "1ee3c94d-7b65-497d-acb3-2d76a9408da5"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Update Scan Records",
+              "arguments": {
+                "script": "/wf/workflow/tasks/update_data",
+                "for_each": {
+                  "item": "{{vars.build_update}}",
+                  "condition": ""
+                },
+                "arguments": {
+                  "resource": "{{vars.item}}",
+                  "collection": "{{ vars.scan_name_iri[ vars.item.name ] }}"
+                },
+                "step_variables": []
+              },
+              "status": null,
+              "left": "1340",
+              "top": "720",
+              "stepType": "/api/3/workflow_step_types/ee73e569-2188-43fe-a7f0-1964ba82a4de",
+              "uuid": "2ee70151-d24d-4b78-8267-7a6573bea4ab"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "arguments": {
+                "route": "2113d57d-14a0-4366-8ddc-2dce425928c5",
+                "title": "SC: List Completed Scan",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": []
+              },
+              "status": null,
+              "left": "40",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "52c199fb-751e-4606-acfa-49f83f1a9208"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Mapping CyOPs fields with Security Center for record creation and updation",
+              "arguments": {
+                "_temp_create": "{% for item in vars.create_list %} {{ vars.build_create.append({'name':item['name'], 'scanId': item['id'], 'duration': item['scanDuration'], 'state': item['status'], 'description': item['details'], 'launchDateTime': item['startTime'], 'createdTime': item['createdTime'], 'finishTime': item['finishTime'], 'totalIPs': item['totalIPs'], 'scannedIPs': item['scannedIPs'], 'owner': item['owner']['username'], 'repository': item['repository']['name'], 'repoDesc': item['repository']['description'], 'owners': vars.owners, \"@type\": vars.scan_module_type}) }} {% endfor %}",
+                "build_update": "{{vars.update_list | json_query(\"[*].{name: name, scanId:id, duration:scanDuration, state:status, description: details, launchDateTime: startTime, createdTime: createdTime, finishTime:finishTime, completedIPs:completedIPs, totalIPs:totalIPs, scannedIPs:scannedIPs, owner:owner.username, repository:repository.name, repoDesc:repository.description}\") }}"
+              },
+              "status": null,
+              "left": "800",
+              "top": "460",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "uuid": "601986c7-2e44-4765-84a5-c56335d8cc1f"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Create Scans records",
+              "arguments": {
+                "script": "/wf/workflow/tasks/crudhub_crud",
+                "arguments": {
+                  "method": "POST",
+                  "resource": "{{vars.build_create}}",
+                  "collection": "/api/3/"
+                },
+                "step_variables": []
+              },
+              "status": null,
+              "left": "991",
+              "top": "548",
+              "stepType": "/api/3/workflow_step_types/ee73e569-2188-43fe-a7f0-1964ba82a4de",
+              "uuid": "71d0779b-50bd-4170-9f64-c8c72de2f5b0"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Save Scan name and IRI",
+              "arguments": {
+                "_temp_scan_name_iri": "{% if vars.result.persisted | length > 0 %}  {% for item in  vars.result.persisted %}   {{ vars.scan_name_iri.update({item['name']: item[\"@id\"]}) }} {% endfor %}  {% else %} [] {% endif %}"
+              },
+              "status": null,
+              "left": "1160",
+              "top": "631",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "uuid": "a1aa33c9-2411-482c-b1f2-e2a84af6f59b"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Categories update and create records of scans",
+              "arguments": {
+                "_temp_cate": "{% for name, record in vars.scan_records.items() %}  \t \t {% if name in vars.exist_scan_name_list %} {{ vars.update_list.append(record) }}  \t {% else %} \t\t {{ vars.create_list.append(record)}}  \t {% endif %}   {% endfor %}"
+              },
+              "status": null,
+              "left": "620",
+              "top": "370",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "uuid": "e275881d-13f1-4505-913e-c3c1238d842d"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Configuration",
+              "arguments": {
+                "owners": "/api/3/teams/6e569c09-3bd4-40f1-98b0-cc994464c3c5",
+                "create_list": "[]",
+                "update_list": "[]",
+                "build_create": "[]",
+                "record_limit": "10000000",
+                "scan_name_iri": "{}",
+                "scan_table_name": "scans",
+                "scan_module_type": "Scan"
+              },
+              "status": null,
+              "left": "120",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "uuid": "f47824a0-d6e3-4b9d-a212-0f35738679d9"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Call List Assets",
+              "arguments": {
+                "arguments": [],
+                "step_variables": [],
+                "workflowReference": "/api/3/workflows/f587c3c5-140e-4f58-95fc-75c09c119c1b"
+              },
+              "status": null,
+              "left": "1520",
+              "top": "814",
+              "stepType": "/api/3/workflow_step_types/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
+              "uuid": "fdfebbca-9389-4324-884d-4dd515bcfab8"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "ab14fcfc-56de-4b3a-94d6-f3946c0cd213",
+              "name": "Alerts -> Configuration",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/f47824a0-d6e3-4b9d-a212-0f35738679d9",
+              "sourceStep": "/api/3/workflow_steps/52c199fb-751e-4606-acfa-49f83f1a9208"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "93dbfa3f-8d9a-4ac9-8253-8d03c8293c5f",
+              "name": "Bulk Create Scans records -> Save Scan IRI",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/a1aa33c9-2411-482c-b1f2-e2a84af6f59b",
+              "sourceStep": "/api/3/workflow_steps/71d0779b-50bd-4170-9f64-c8c72de2f5b0"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "c57bb4f2-a548-4daa-bfb7-04978166752f",
+              "name": "Search scan records match on field name in CyOPs -> Categories update and create records of scans",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/e275881d-13f1-4505-913e-c3c1238d842d",
+              "sourceStep": "/api/3/workflow_steps/1ee3c94d-7b65-497d-acb3-2d76a9408da5"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "1919d390-36a7-41f2-8b53-4ebb5936e8f9",
+              "name": "Categories update and create records -> Build records for create and update",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/601986c7-2e44-4765-84a5-c56335d8cc1f",
+              "sourceStep": "/api/3/workflow_steps/e275881d-13f1-4505-913e-c3c1238d842d"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "a6ef28c3-d9c9-44a8-a15b-7a4fe95ce516",
+              "name": "Save Scan IRI -> Update Scan Records",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/2ee70151-d24d-4b78-8267-7a6573bea4ab",
+              "sourceStep": "/api/3/workflow_steps/a1aa33c9-2411-482c-b1f2-e2a84af6f59b"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "a0911bcf-c10c-4591-bde4-1aa5832eb7d4",
+              "name": "Update Scan Records -> Call List Assets",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/fdfebbca-9389-4324-884d-4dd515bcfab8",
+              "sourceStep": "/api/3/workflow_steps/2ee70151-d24d-4b78-8267-7a6573bea4ab"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "63a61b2e-0d3d-4480-b758-db2e58df3e9e",
+              "name": "Configuration -> List Scans",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/179f42de-1124-4e31-8668-0a90040a495d",
+              "sourceStep": "/api/3/workflow_steps/f47824a0-d6e3-4b9d-a212-0f35738679d9"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "2157b0d4-1b8b-4f91-8144-3abe94e25e68",
+              "name": "Mapping CyOPs fields with Security Center for record creation and updation -> Create Scans records",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/71d0779b-50bd-4170-9f64-c8c72de2f5b0",
+              "sourceStep": "/api/3/workflow_steps/601986c7-2e44-4765-84a5-c56335d8cc1f"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "42ccf724-c3de-47a5-93c7-c4fd3fb573b9",
+              "name": "List Scans -> Search scan records match on field name in CyOPs",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/1ee3c94d-7b65-497d-acb3-2d76a9408da5",
+              "sourceStep": "/api/3/workflow_steps/179f42de-1124-4e31-8668-0a90040a495d"
+            }
+          ],
+          "uuid": "f4695c59-9d45-44a2-901c-df35f88ab747"
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": ">> 1.3 Handle Assets in CyOPs",
+          "description": "This playbook update and create the asset records in CyOPS  and build the relation between assets and scan modules.",
+          "collection": "/api/3/workflow_collections/6d86c1bb-c132-46af-ac41-0eb271f1c12e",
+          "tag": "#Security Center",
+          "isActive": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/995549c3-6a91-45e3-bdb7-2a3d13b82254",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Save Asset IRI",
+              "arguments": {
+                "_temp_update": "{% if vars.result.persisted | length > 0 %}  {% for item in vars.result.persisted %} {{ vars.asset_iri.update({item['ip']: item[\"@id\"]}) }} {% endfor %}  {% endif %}"
+              },
+              "status": null,
+              "left": "1080",
+              "top": "560",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "uuid": "1f129dc2-3838-4d06-aeac-0f1755b35eb8"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Update asset records",
+              "arguments": {
+                "script": "/wf/workflow/tasks/update_data",
+                "for_each": {
+                  "item": "{{vars.asset_update_record}}",
+                  "condition": "{{1==1}}"
+                },
+                "arguments": {
+                  "resource": "{{ vars.item }}",
+                  "collection": "{{ vars.asset_iri[ vars.item.ip ] }}"
+                },
+                "step_variables": []
+              },
+              "status": null,
+              "left": "1265",
+              "top": "656",
+              "stepType": "/api/3/workflow_step_types/ee73e569-2188-43fe-a7f0-1964ba82a4de",
+              "uuid": "4657c729-2f40-426d-9b2d-6e8ed69d550d"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Categories update and create records of Assets",
+              "arguments": {
+                "_temp_categries_asset_recors": "{% for item in vars.assets %} {% if item['ip'] in vars.asset_iri.keys() | list %} {{ vars.update_asset.append(item) }} {% else %} {{ vars.create_asset.append(item)}} {% endif %} {% endfor %}"
+              },
+              "status": null,
+              "left": "520",
+              "top": "280",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "uuid": "4fc1d1a1-57c5-4d58-8ee2-2a23eeb91cd0"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Create Asset Records",
+              "arguments": {
+                "script": "/wf/workflow/tasks/crudhub_crud",
+                "arguments": {
+                  "method": "POST",
+                  "resource": "{{vars.create_assets_records}}",
+                  "collection": "/api/3/"
+                },
+                "step_variables": []
+              },
+              "status": null,
+              "left": "887",
+              "top": "470",
+              "stepType": "/api/3/workflow_step_types/ee73e569-2188-43fe-a7f0-1964ba82a4de",
+              "uuid": "5f48b4e8-fee5-4f88-9192-8ee5340fbcb9"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Mapping CyOPs fields with Security Center for record creation and updation",
+              "arguments": {
+                "_temp_build_create": "{% for item in vars.create_asset %} {{ vars.create_assets_records.append({'name':item['repository']['name'], 'hostname':item['dnsName'], 'macAddress': item['macAddress'], 'ip': item['ip'], 'description': item['repository']['description'], 'owners': vars.owners, \"@type\": vars.asset_module_type}) }} {% endfor %}",
+                "asset_update_record": "{{vars.update_asset | json_query(\"[*].{name:repository.name, hostname:dnsName, macAddress:macAddress, ip:ip, description: repository.description}\") }}"
+              },
+              "status": null,
+              "left": "700",
+              "top": "374",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "uuid": "724f8062-ad98-4d37-8fab-cb7ef72a95c2"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Search asset records match on field IP in CyOPs",
+              "arguments": {
+                "when": "{{vars.assets | length  > 0}}",
+                "script": "/wf/workflow/tasks/crudhub_crud",
+                "arguments": {
+                  "method": "POST",
+                  "resource": "{\"logic\": \"OR\", \"filters\": {{ vars.assets | json_query(\"[].{field:'ip', operator: 'eq', value:ip}\") }} }",
+                  "collection": "/api/query/{{vars.asset_table_name}}?$export=true&$limit={{ vars.record_limit }}"
+                },
+                "step_variables": {
+                  "_temp_asset_iri": "{% for item in vars.result['hydra:member'] %} \t{{ vars.asset_iri.update({item['ip']: '/api/3/' + vars.asset_table_name + '/' + item['uuid']}) }} {% endfor %}"
+                }
+              },
+              "status": null,
+              "left": "349",
+              "top": "180",
+              "stepType": "/api/3/workflow_step_types/ee73e569-2188-43fe-a7f0-1964ba82a4de",
+              "uuid": "987f09d2-5c95-4082-8b69-6e2e1778caa7"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "arguments": [],
+              "status": null,
+              "left": "6",
+              "top": "27",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "uuid": "995549c3-6a91-45e3-bdb7-2a3d13b82254"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Configuration",
+              "arguments": {
+                "assets": "{{ vars.loop_resource.assets}}",
+                "owners": "/api/3/teams/6e569c09-3bd4-40f1-98b0-cc994464c3c5",
+                "asset_iri": "{}",
+                "scan_name": "{{ vars.loop_resource.scan_name}}",
+                "create_asset": "[]",
+                "update_asset": "[]",
+                "asset_table_name": "assets",
+                "asset_module_type": "Asset",
+                "create_assets_records": "[]"
+              },
+              "status": null,
+              "left": "154",
+              "top": "107",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "uuid": "bb5a01dd-0401-4740-a34c-96ed346a74d2"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Associate Assets to Scan",
+              "arguments": {
+                "script": "/wf/workflow/tasks/crudhub_crud",
+                "arguments": {
+                  "method": "PUT",
+                  "resource": "{'assets':  {{ vars.asset_iri.values() | list }} }",
+                  "collection": "{{ vars.scan_name_iri[vars.scan_name] }}"
+                },
+                "step_variables": []
+              },
+              "status": null,
+              "left": "1449",
+              "top": "740",
+              "stepType": "/api/3/workflow_step_types/ee73e569-2188-43fe-a7f0-1964ba82a4de",
+              "uuid": "c011fe7d-451f-4824-8b4d-09afc3a13464"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "222b0339-8f19-4d00-a38d-140d196a6fe2",
+              "name": "Save Asset IRI -> Update asset records",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/4657c729-2f40-426d-9b2d-6e8ed69d550d",
+              "sourceStep": "/api/3/workflow_steps/1f129dc2-3838-4d06-aeac-0f1755b35eb8"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "269fbcf2-797b-46bd-b049-f6fa91b37e33",
+              "name": "Build records for create and update -> Create Asset Records",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/5f48b4e8-fee5-4f88-9192-8ee5340fbcb9",
+              "sourceStep": "/api/3/workflow_steps/724f8062-ad98-4d37-8fab-cb7ef72a95c2"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "61d54af5-b983-4ff7-aecc-a77a8b1e933a",
+              "name": "Update asset records -> Build Relation",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/c011fe7d-451f-4824-8b4d-09afc3a13464",
+              "sourceStep": "/api/3/workflow_steps/4657c729-2f40-426d-9b2d-6e8ed69d550d"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "99714bdb-4132-4465-8c60-c53f5cf6b92f",
+              "name": "Start -> Configuration",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/bb5a01dd-0401-4740-a34c-96ed346a74d2",
+              "sourceStep": "/api/3/workflow_steps/995549c3-6a91-45e3-bdb7-2a3d13b82254"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "a16d55f8-0b41-4ee4-bd44-b146e6b5a35c",
+              "name": "Configuration -> Search Asset",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/987f09d2-5c95-4082-8b69-6e2e1778caa7",
+              "sourceStep": "/api/3/workflow_steps/bb5a01dd-0401-4740-a34c-96ed346a74d2"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "b9e7f357-8d5d-4ddc-a3f9-16b84b10c5bd",
+              "name": "Search Asset -> Categories update and create records of Assets",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/4fc1d1a1-57c5-4d58-8ee2-2a23eeb91cd0",
+              "sourceStep": "/api/3/workflow_steps/987f09d2-5c95-4082-8b69-6e2e1778caa7"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "c9c99783-03d0-426d-a8a1-84d5cc304908",
+              "name": "Create Asset Records -> Save Asset IRI",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/1f129dc2-3838-4d06-aeac-0f1755b35eb8",
+              "sourceStep": "/api/3/workflow_steps/5f48b4e8-fee5-4f88-9192-8ee5340fbcb9"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "f97d8f66-9ad9-4f6f-9d9a-477830b52ca0",
+              "name": "Categories update and create records of Assets -> Build records for create and update",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/724f8062-ad98-4d37-8fab-cb7ef72a95c2",
+              "sourceStep": "/api/3/workflow_steps/4fc1d1a1-57c5-4d58-8ee2-2a23eeb91cd0"
+            }
+          ],
+          "uuid": "b4ea9d5a-ffc5-4576-a7b9-c9700383bebb"
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "2.1 Update Incident > List Asset Vulnerabilities",
+          "description": "Pull all vulnerabilities if one or more asset relates to an Incident.",
+          "collection": "/api/3/workflow_collections/6d86c1bb-c132-46af-ac41-0eb271f1c12e",
+          "tag": "#Security Center",
+          "isActive": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/da6a3f0d-fa00-4ec4-addd-886ffe0e6527",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Call Handle Vulnerabilities in CyOPs",
+              "arguments": {
+                "collection": "{{vars.steps.List_Asset_Vulnerabilities}}",
+                "workflow_iri": "/api/3/workflows/6a90df40-60bc-403d-ac9f-82d76228e313"
+              },
+              "status": null,
+              "left": "860",
+              "top": "467",
+              "stepType": "/api/3/workflow_step_types/b593663d-7d13-40ce-a3a3-96dece928728",
+              "uuid": "09498fea-b73b-41ca-8f7d-298556c62791"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "List Asset Vulnerabilities",
+              "arguments": {
+                "name": "Tenable Security Center",
+                "config": "7af198cf-7be6-42fd-9fb9-eebb364da45f",
+                "params": {
+                  "scan_id": "{{ vars.item['scan_id'] }}",
+                  "scan_name": "{{ vars.item['scan_name'] }}",
+                  "asset_info": "{{ vars.item['asset_param'] }}"
+                },
+                "version": "1.0.0",
+                "for_each": {
+                  "item": "{{vars.search_asset_details}}",
+                  "condition": ""
+                },
+                "connector": "security-center",
+                "operation": "get_asset_vulns",
+                "annotation": {
+                  "id": 442,
+                  "name": "get_vulnerabilities",
+                  "system": false,
+                  "category": "investigation",
+                  "connectors": [
+                    288
+                  ],
+                  "displayName": "Get Vulnerabilities",
+                  "connectorsData": [
+                    {
+                      "id": 288,
+                      "name": "security-center",
+                      "label": "Tenable Security Center",
+                      "version": "1.0.0",
+                      "icon_small": "data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8AXHiAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsTAAALEwEAmpwYAAABWWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS40LjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgpMwidZAAA8EUlEQVR4Ae19C7xdRXX3mr3POffevEOI8iYkGNAgPvBVRHttreLXql/rF6wgmBd5ISr1gT+s5dpqrfVnsSIBQggRq1Ziq5Zfa7UPbilqtaLyCE+B8E4MEMj7nnP2nu//X2vPOfuce859BNQ89kruPnvPnlkzs2bNmjVr1swWKaCgQEGBggIFBQoKFBQoKFBQoKBAQYGCAgUFCgoUFCgoUFCgoEBBgYICBQUKChQUKChQUKCgQEGBggIFBQoKFBQoKFBQoKDAvk2BgYEIBXT7diGL0u1vFGgylDHY/lb+orz7LAUWnnuqnHPeDC3fc8RcTW7dZ2tdFOxXRAG2vZezz36e9Ez+uaT+67L28gs0L++dOOefTb4cWws4GCkwf761fWXyqyWKDwcJ3i+LVnwgR4qxCp2O8Uo5RMXtwUgB718D6QTZ5VP8fkYWLtuM368Jh8SBgU5SyyTdihXTZY+8TdNF6WbxtZ+J7z1R1l1+E8joC4l1MDIT6zxvnjGNc68AczCEjFURF6+S9yz7XTBVKvPnx3zRAgMDJqGG0mMwj7xaYvd58e7jUup9Be4/IP39mqZgrBaqHTQPThlnwcrDwEwvkiShxCpJmiYSuWkSR2tkwbkvlfXrk2HMFaRYzT0Oat0ELe1GkXi3pO44iaIemTlTubRgrIOGl3IVDfpVJC9E6FFgLA8GoySKcZ9IHM+SqLxWzll6TAfm8spsX77il+L8FZImX5JyaROY6lgdFtevLxgrR+qD63bLPBvOxL9CSqpmpzkCxFKvJ1KKX2aSa8E0Za5OZogkhWDCyJfWI0nqR0o9qUISKqpCYuUoetDc9kOfIjj3GtWvMjbL1T+WWi2Rcvn3xPVcKm85v0eHzk7MFXlIuXQbhsRDJJJdsmGDYisYK0fNg+TW9KuzzpoCxjpJ9SvcdKh7BOZKpVR5txxW/6S+p0JPG1cA2rpSF4GpMCuUKVDid8v06cpTBWMFIh0sv2FWN2HqCVDW5xhjdVwnBAOBieo1D4X+Q7JwuRlPyYONoTTGTDItQdeqgjcxpkIQVqvFrPBg4aWWeg5iwCIk/mUY6mJIIEwJOzIWg50OlTRHRNFfy3uWn4VAL3MfM6nlUir9wEeUfhPu67JzgipthcQCSQ4qmLlBZ21gpVOVn0ZbuuFskcZTkRIk1xdl4ZLfkdWra0ozD/1KpAyJBQaTW8Fc2+WwWHlq/2csKpT5cf+g4pJxV9Zl5gMaQk+GqYAIxsIDEeJipliaJlHlc0L9jODcHox+e8BUW6Um12HkfEqGhlSajQWp4thHL6aIWq8z8byPFnSfKFZDv5r2AjDKiSPoVx2K62CGgDLvopdKz5RXaYQkvRUmiZ9gAfu/Zc5hd0ByfVe2HrGb73Q87IBlfwgiI2F1fvlJIvWd8uU1D+DZwvaH0v8myjg4SEGSwvh5MqRPn1SHEkgdVbbHVByPIa+E6PVktsbf9caNsv4MFXt4Ju1vCXj2V4nVZKCe0jopVz6lFQo9MtSu+G2lQLbcAsnyW2AoDmWmb7XG6v4U4nt3jEbacgfbIUALrv2TsQIDLVlxsvj0FBDotbJ06VQ14lnPCZUtfvMU4NofIYpeDlMD7/KMwefRgeyT+kM0YpgIdEi1fzJWZt1FBV+AdS0MiOnhUi3N1foFputQ2YM7KDNsLlg+C/R6IZZgQLe98W5RwTRVaRk8JDoQdjTGGj9Hd8jkOQ+al611RfHzMpFelpKbqfkEpnvuMt03aTDe+s0/w9q6HJ8Ex75D1IRgC8/jwATmJF85WNkJF1/cMvxpWHbpxli0XZCgHsNLtzh5PL/e+8FByy9Np+sN9YXU9T3nhbC675s02NvKpumrVcqrmXy8SIwlMDOcmNF9XIxlqamokbBcH9qbsXi8Zd6b+C6b1aoiWi8riiDN9gZfexrWvUmD9rf71/N116lShaZ81V7rV+QDWuGdI2MFgUN+GQbhZXhhTPXWpRNkwfIF8uDjF8nZS1+Nl/tqrw0WYBSxZIrphhd17UWhkmP4NWItWvkmeWjTn8mipW/K0nQk4hjw/aaj2OaIs5dTdQiOfe1tP7YykrrOT5K3Lu0dKUEr8uAANjNagXWka6TS8xdSKX1dzlr2IpVc+8qw2N+f1cnt0hv2osirYU5kvb2zso6fESydh5Pbaeif10m552Iw7XpZsISZ/uo62N6W12o78jW0azmaB4lzFJR3GDop5scJqh6B1qlMkN6aDYddUDQZixXjdPTsJcfB3H+hmvur1SoY7FjpiUHcfQgGs7I4+aUqk97Xpe6fypXQLPJkBIrvsUNIF8GA+Of4mwoj4hA8JKdgKePPRH5FqgFpbyrHeMs7tpo1vBHk5VKCxgBnl7ElbItFSpqZYqJMiSa0vW15bDJWmE1VymeAkDOBoA7uLmPth03zNlm49OX7jNTqzwiT1O9X3omwRrVjF+4BZqvx6rN91vmcvYy9sULPXrjidajzG8BUHjSowBUEPRzPCzf1Mwu45jbppgHP8kKmWrDsBbJ8+ZHANPbyjjXbQC/nsfBM9HsL5Cym9xOlWp6sWLqYd5oEWr/euNhFb2oodyYu65BavZiivl0RBQbUh9/QJTj0T5t4K+wxd6KuP5T16zZpabhAunD5++AyC1/sbOmhS+W7lt65P9KeLY5LHtpP9dnJO7qm2bsXJk2pwzn3FSznvlnR9A+MfZll9HxNCi9aBEbAUMiNE03Fe/TUrTFobmBn65FSOqah0Fhx4cqjkaip3HFtiIVgYVx0OnpqJZMIRpDWTH+dT6yck0su2Q232AvFJ59pZF6ZehI6wt/CxQNEhNQdO9jK/9KlZaQ9LVv55yzIaEBPgCg+Vd7ylp7nkAaGO658WiZPfSUs4lbe/rEXetSYoVO5CjZOeDr2WZ6jJhwhgq4vZiaHLoLGJFYQ7Q67Npw7DBLLlLtSyRiIjOX9C6V35hzNLhR2hLx/5a/CutW6K6+XtVf+sLlNCRsB6nUyXiKVcZQi1Gl3BM9K1FV7NizTcUYD5S/4Hh166HO/cJ/6IWxIQOcd59rd2KqXjUpwkymVSqDL3ulXzbzgUQqUUcZYzfCWO8s02H4iNweEJBNxelpDr30ECCyOl6pE9aqmHsHi2oL91/NA5neNDZjMk31yvBB6Xrl0Albw+zBzwjAYO3QyekamalRM07vky1/eCV2TNNmbXLqUKkNlRukucfYyeEPm2JempymGZ8286GFkCSeTFF9zYtBSQGOakLn3s5ReMQgq7psYShaj9/6X9PSwN90ju7ZuROpnfWBESwme/QNbpb2Rxz9Ub9mSpUlfjLpy2KPb7gZIkmVgru/CgwK5uJ9pcc395NmXvIFh/MVtJB35punYV4penOnO1uZMZ8M8addNitEzlKMXN1HkaIzycvPECGCZNBYTYeMw88YOoPu0fGn196SW/AmGFhbiXtUtwpAxAtIur35l1OuY33hz6+8PxH0h6sqORLSfky9d9U+Q3BdhhrhbStFtmldwP+mY8T4UGNpqwvNeAB/3EzLF3ShDRqGqE0UOo1SU1TdfeNvEGsHVmKMWhQ3TkL0Ug5+Wj9x+b4wVhrYonoqeypS3ycY7bofIL8nfrf4pnr8HFf6eLHGe40Pz8Tfct+cB8082dNhv+/tO6drD8vjDfYgTng2vTy08179yGYY0uSC9DfYrSCp3JCYq7EgPy57av+jba9dw9nkdpJfNPJsdMeQdfofjbdIlxGktw8BAe5rhz40hUtdvW9Nb7HxYM5/G8O5PwvA+EXVi5zEGIaOkyRP4+7TWbXiuxAOLV7IODPkF3O5QJqT0InhsxVcYtJ+2qzGJ9U5GhlkB+Hz6oAwO1rH50N7Xh74Kr0E4ywOaw6YNif1gPqTI/vIVZGwD2mk4ozQjYAgNv51YoD0sjz/chzjh2fC5qPlc1xlQyIe/IU0+rHm/ALt+vXue0cDdIV9bs7kxKUiTy6FlbtTIVg/UFcq2jRAhz/b658NxP8D3oQwWN5hO2C+D/jOouYSL0ZmzVeZn6TvlE+KHOF7C8O4Fjn3alMYUZA7qSV4+K9dceZFsevAcJL4BEow4aI+Af7suvf6zrL1ioVxzxfsRd032HsMiYvjgk2VnNTBhHhQTAmw/Ps6hIUMj0RMaacsWK0iUXC+VihGEBkhKHhbuPUuh7G8+V2av2CTb3RpZv2oH0rHSFpfx2AiLV56O8f10WbDi+zjmhmsuRpi3nF+R4/E0Y0atwXQkIPem7dxZa0zrGe/5252sW7dHzoERsSwrkP91subyW2X+BX2yo56C4W2qzu1I1Az4r0w/WsAGKWE3rxuWF98xv60TS7Iepou0DKZKZogHWXwKSZ2Da1b/qPFkkxsvS5Y8Xxaft1wWrqxL4q6Qay97ErQzRmAd8+VevPgQSTdfIG75fWisdYqL9PnRj2gKJ9HxX3e9iMzayHapK52VfnC/rrtzYJ97QCbhTIVLL4XVGviZiDg2bqyAXinoVcUWrdfCD/3NiP+3Wh7Gc9HLUB9myTRgKuiPafqARLU1Mv+6GO7FQ7J4xeeQ/xuyOM6GTfc3TKTg3GUQLgtwPxXxgMmbjkXpvT5bRrOYejWJxFvlbkyvNZGQQSScHCJXX/2UXH75Vg3jJfSyOP609PZdCLvRJTIpXaTvg+miyVRgHXc14r0fx9ysk7PP/W3E87L4gulyePIR2Vn7lDz8y9malmlq0TKJej8nE2a8RsPOOn+yHF77KMIu1OeSnCvTDv0Yxqx+bdhJuz+t72fO7IP1+veQ1/lAz14F+1t6nixafrFM/uWrsJv3Is1r4+PBZGJ1r8eLZdLuS2TRytPgC06iTVcl17kNml+nWc8ZmW9TWvmw9PYMSE/lkzAYfljjh3dnrpiGPP9Uor4/0fC0Z4VMmIDn+DJ0jpchzMvGJ+bJ4cd9CsU9Cp2JQW9HeT+NNGxgA0p6L58H/T4MOq+SndV36oulS8l8Io8+ery43s/K5Bln6nMp+gvkg2OFYDIhnL1kFvCb+cQc+7C7mf3N36jtGnzWtz3xn6j7rapPRRgmnbtFttSbnenqVb9A2H+oXkYmdZFZ3oMapZk1L03Gaoaxyp3DGcfOTPLopacio/mye1ei3B3F58t89EpbUnFhDz9SvBeS4wjE2wPxOkEq5Y9oVrv3YCuR+4j0TfggKmONvX59CZJxgUydvlIqjl4VEMo7oPeVPyxx+YPYdnSURKW3QJFGv/NPSlKZIxMnvR+N9VHZWp2I3z+QCZPehVTsnhFmckuxRfxPUc4ToXx+UPomflDiyolEC0Ad+0so21I5ZMYyVPpVCJmExkNvpfDzmzVWu/stmZ91POfcucC7WPbswe5fLnu55fLulcdn9UfSoelowIugGJ8nf7zwaHSqhaABFgRKE6Qcz1fcsZ8nfb0fBL3JWJTy/1cmTf4ofs00QGk1acabUPffRdqadfr4A2iDPtm6VUWQ+MrxMnXae4F3vi5jMe0uSC9fN8+P3vIxwMclOirjqBalI/5LdBMuAkZ+hyxY+UqUezcY8EdqVuHWQJ/+RK5fvUsl4OIVv69x0+ShTP9E8oZPlr5qv7QyEPUT5ul9X3vEYc+Rf1s2DnswFsfs42VyL6URJRrEK4l/zgxU5g90VulcWWraK/tl8eLjJYYyKH6PVFH/FIvIhNf2QllMEYZ4CXaqESo9IFKC/WvJTilPwowtOQHbkFCxGK0JYyjj+nS39KIMAkNjRk+kdDh7ALhxAopPHwXeJ0y8c7hXSGXR7D5ItYoyh0SPYESaooRlGWJn6kBDUc9SBVNDXDkdTAmdDGXnXwnSrkeCew3KXUkxE8PwmuyQvsppiDPH4qKYumYHfJEMaRnZEbh0RDxDpFH0dJYb7/8QtOUjtrtjyHfuZWC232owMGnHeops0903lUoZjDqENEQEiA7ROoE49oxc1S0ZCgLXJ130DXiGXK4Cw0U7lPk0mbtR48duNbL+ewiSoyEIjmqg8fBwCEImQ5z/aWUsZs2/yB2qkdqJykCTSNCxoteDaAwhK8KACFQuxVAE2IDCE0qTTsGVywjsXRzXcYJJBavilX5JtrEHWrwwk2OazkC9CYeCYa0rwuxGV9gzlxnG92H20ZZYS4YemmJDZeQ4q0Hc1GYzHM5rFRpCJ+MPCdOn0ODTtUe6aLsM1Z9SbO2iPpglIugjprhnmWq7/W6jBEmdWh6BhHmjNi6lhZIimiWnnFLGO+s8Gi13IcMRuL4X4UQYlaBKU9AZI6CLXteI3aCdK6E9MMQiU4dpBq35BMg8ZZZgh6J5IU13ya7dD6LN3g0JjXYqnSKTZp6BdMdq+joKWa//TJac93/QYV6EsgOHvxD5zlLam7oEAynUDwOrafbAH2tYYhscBJdgGYREjkrH6LugS4UEHAYIi1Ygg2zZgz2N7colkAj+1IR5qI7Bq5szCZRGZz2IS+NarW9YYSxJFqwiO8OCWuEOBkv3YjRmSRs0rcP/im2TQb0HPZ5UbQDS4NGxTvXtyHs7GolB5s7MUkgdU3CUhY3tcCqdpJSwqIdD769uU0ytPGtmifnzpyJedlKL0tCUXTrRzV8JggMSDKl6LoLnMde/rVKb4aRvmhwuJ7z0iIakZjiBdWaj+YwppHwCHuzgjlAOvo8cO6wBGYU4Pdy0IyxH8R6yGrQyXzUeMxTIogyBJozcVhw4BHrEL1VGYds5vxL5vkTTR/KEVONH8O50pQdPnRE5E3SydWTmnPrJUoL60QUCY/E1mwWLusgkhfX57JWoFMICMzFGsIt47I7hkYJqMCMxBL2FBElnq0I9MGBDm/MvVUIxLY1xnLFpJTCVL+9Ggm6Q4w/2fO1tcF8R5MtUzCsuDSG/ZsQSXFwCkwe02hgRhqQUcUFIPntvO0wYp1ICYeANyeHT13agMaZpHJ5BIPA1aIdgcJw48zjU4xhtFOJkvpSiaTpL+vxsTRZVOXPGMKmzqGNUYpUrtOZzVlaRCZVD8Q5DW6MJmuVXJieW+ASk68GNLbqr1CcTuDkyH9vdCGRG5p0khyL8SL0XB4kVpCGkrzIbysiOTYql6GRb7kQbYWRSegKB91h498dZO+IYyK9ejs4VoyOTpzQWOyRtYWZicVCXerDptQtYrQLB0mSXFiyOp2BWcWaWplFzrMdZQzp3nBJKG9L/LeJ9HYyGyqWHYRvWsZpuwQLYxHDPSvOIG05vodGit1InuF/iKRA3KomybPI/qG2w6TAY7Ii6YRaSHqcVZWWTFGuXOcaixErTWlMyAIfqP9DNJMafRw/W4jcZK8Ww6iJKwD1YYYCECtZk9HaaOwyAKIOGfoUhoVTC+QcgjZe1eLtGh9ko6oXueIzGTrl4TRGB0pdgFEqSW/B3E+LRko1gGKM9Vp5NJ0SFtHDQuaAaJYkNY87P1bhkUPF/BZr8iz4n6REyOT5M89GhjXWVw/GXMRbkUS86E8FTz1NahLYj2XdjMZ3Pk6yIGlMjW9n8Y9CfIHlRF7YfVRbr3GwXi5yCsZKaSefAPwENfo1pgiRKYb9ipe1MpGW6fZ3SJ5ye2zSOzrWx3t0v25+6EIPUX4IYNYzHsZSj5yv+eOLzUagjLS/3IBjhXNx/GQy4WTb89AGQEYylhLcoLVdtk6wGeMGeLVD+JdvixXU7V4dEsRk3CAWZOYSeHf0jKrsKlTc7W5p+DhEHZGjrk8AB5iI4mybrLfQrmHTAIJBQJbyH8m6wJ9Mlm2XQ8P7sdXqsDvE+fRJD6MWQAPjDPfUVFx2ukUpgerIVG0R1u+hi0Al6SoaSQ3Jc3wD96WMIexjKPiK7fwCe92HovkVxeEgQLZ+7Uw2Zkf8bbWhHqeuO0DhhKHSUjOkkbReunmzdahI3SXdqZ4S8Ymk0DRnVzYT0TFHgPKCjU0B4MFbvVNjd/OGWn5Y5KzjiW7OhE1WMsfIosntjrCCJ4ui+rOJVVGimlN1n9ZjAYEIIyryLjjRi+ZvRAFUZ2oF0EYY3ltMbYyXYRMpxXwmTfku+dOV/SBJ9AQz2A7n5ZkiDlC1qFR1WMATnJZY2EerlHJgHLsjVoRsgwzirBA7EJeO53rKsW/W/QHsVnkkE6Fb+KnxtYbWW0eM4QwXXdKl1UEpZPvFPS19KfNmMEZ4dhHa+D6YH72dZA0a3yNovPoZ84QER/VRnyT6TWJHOsD3wU/96XIbSG6Ue3wucm3Wik6SHyBpY9tet/kuU9jFd5BZIpHVXXio7t96r+eu+STRR6n+sz1W5G/dgQkhn522ClSSc2BDgRxb1QOI9DGb9gfRihk2IQSfV9Zp8AUJGsmV7HUyEA9M0Vu5COuOsqx54iDrB5EbR5GOZahKBe+PuPlnGWIODhtj7+5RDWUieQVkqny6HJe/XlzR8BmU+cpg9IdSnd+s7upKIf0gbic76hLgERRgVNaX+vzSsp/YA2vsLeh8m/fqQvxg9UKF8ZZgX9TREjP4OutB7oAJtwkOux5nkF1cj41j/dJgSB6B/PCHSsIB7gnYQ557BmU8YKiPDh4m9xv3EJ0I8fWy45jgMO5Q8Sf1Be4Frmtxv996GqHrMBVubxYn8HDrLVqk/vQvpcNowyU6dEcDzPa2X4icLY0fv70dlwTxsWD17CnEfumszmOE+Gy0yxlIkvIRekMIIW/qY9PUZIetUBTA0BkmpochnG9ULt7MRHvAwnoeOlYJp2Ol0CAwvs1/V1Uga36RvWxRjrDCF9ukD0FEwyOsQiZ4G+vKYwEUrZuvQwLJzCcR7GNxwH0cPN/Cl/vGskDM1zCfTlBGShLacjRp2xBF7ZO3qm/Q+SViyDsDgtlckhg7RcOBL/TfkmlUPC5d3VGK1obC1QguMdd0wiwC/eKU9hsJTMqu1T8y8INlKg8tcA6mrdYJgenAxJy4oJob4JjysxY6c6XAxysoG0GEQFm3CwzF8vCKcJ4X6pZm0nrSJtTPwWdjFFydyxAthBsGBseyYtLERuH5LdcUa3xg4Yhr85zINXZu2P/WPsubSR4S0JqRkqqjJWIzroa/+zg5KUjC50rpZBsUFG16EDcAse37kUITZRTuH7i/MHR3ZjGCMFSRRyd+hhdPhgYWCclnCxgqRxZqEmVQnYCYF4rHC9cyIyJcRJQLKl2Ks12cwn9q2EMdXzYrNfPKzTI3Y6ZKrp71GA6H3RNFDMDpSSjY5rz0qhyBCeziHO51IwLwweytnWgB3iBI25TDIR0pAJKRS3QlYfy0/GsaY9IlGNOe2aJ4uMj0tpsTKlsjoLUKYWyGXZKJVQzpfmE854Tb46dq5WfYG+Ge0zL5hNkF5UWaTLndCAOxQnTi0aRkGWhf0S9wxrpdpsv35mNFBlVEGyajVMHeAGdvtX438cUMpRoakZYDQr9eWizEWs6KCzuGAXxrQIQeoyS4qtaJ3yruW2pguWIrxWIDUIc5neovixFiO3zhTjhMxm5CDzaRWe6aRa+j1jYBRbjihpY6lPV8eFh5cH9YjR0na8trBmk3GSrHDRCbZNDmFVLUea8bQRoJAlkYAb4yZ79vRB8qYxOLuoAAeU3ibQVnHSnWezpPwQJNseUiXYfQg2JCq+2/sqBhPxAjCAdUYn7EdlrIIKSYeedB6wGeuHe7DTJ82PKsn0yEG2s/1HIE2/DZ0MgZQxyCzGOMJbWDE3+y/LWjJ+HyVgPkJg3ptuXSi4DeyJQK+o7jkMsIc6Su/TlPGmKJSySXdOG0N4CIwGTjLRaY7uBRGREXxDNx5GY9FsQKFNMN+afcjd7YBhwgSJk1NTwqTjbZoIz9Cj2Jn4DDQVzbGco1ZYJA8XSiZw1x6EnoF6kaGSSPqLwYxTSlsIwwhBEosKCsqIRLs9iHwqw2ddBZ92XbxNIVwJgy8wdipUXA8I4GmDUKak9BeHtIwow8JCcP3Oqg2Pq9LUe+jyWMuJg63oR2vtRkpdS6ASmLawNgBO7SFRmI8vTHpHCY14R1+m4wVZn5rVw0C+Q2Y4eGd9joa9BA1eaOmq6ny2wsikopNXYTrU5ZZmFlxVgFApVD9rMAMGAFuxrusbdkrmmCMxdkKIfiJNd+PflfHtFuXRtAT6dNOcNSHkE1D8ozEV1lxEjIllFZWP1b6WN5c5LVGsQlAs8vZ+8a1SfJGkN605532asd0bgg2xfzwyaUwpjA628nFKJLW43FFNahXCyPtBctZJrGYkOu6rPYrNVY9vRjrrXeB2Si12KZcgoUuGESchnS5ZD5ZHd621tKGGGb+We3dMNKgwGbZjUov0fQxDIoOnOYh0pNspqUvIHIJ0A70F/N/ZTSHKW0LtBOw5WX2gDgts0KUQZNFWyzCvE6JRg5LdTiGvYoSBY1GiOD6wQZJveF1lDBd0Ax8wgpOPay50hAkHZFl0gszLs7oSjgfPddvm1it7ZrP4a4t4ziGgVmbZ0i21bN6I67HcgvBpJneKtNQgrpMFwsSJMxqPTu30lRTqrQV9waoFBW5djU8FuQiDaM/GOnhsIAdHBFaO7jlp1eWN7JhP5ihcm/JpU2g1KJyOjDwHcwEV0NqLcWwiDGehcZwyM2gtHbbsZUlVHwZnPg4PLEXvVYlQsYCKJwxWOpNqlkl26jXzLr1rku0YDLY8aQ1cmuikZ+i8jbUgeuFnG2ZxBKZDKZCY+V0JcUMBusKausqq8Ty/o9R/1ej7uAWrLORTjSBzJ1bkVqpSyW6Im594eF1ASMUYIJMLl0g555HVQNeHumbTPIG00gm2bnAn0AyEdjQeec7D2nNNjMmKane5uCWNGEGpdb34Xj4TbT3P2BIfIcKlBLqk2QzPkXYfsk6YJTZBKk3Dwy0RGplrPyrmv84ZOJroCucnOlZ+MTrFFhiURHWl9xdKX9UewulJpcm6L7hMhEdTAF0Wxkz5HSs0FM4pPQBq0oWeCkQjtfreC6YF2HRemoZHg4ofC2BngjguqFOQjLl2MN+RXYInUIjtV0iGGm5REVeqlTgC5YJfeLhH49WqtdjqfZ4gcfPXoN+6YFMj2G3p+dixUM6c8nH6NwcbRjuVOHOT6bya7sIz/cVFL6EdUupvRd4v5/hXgOmfYe2pxKBFewGxKX9xujYIVqzcOHlwECqopyzL/ED2qDEEnO3RokLkawE/2B6GEplaA9O+t6NJU8YVBluQyFzhtKvcXkdI+R0rHwKTttVpcuG2005208+Xv4+nyvXsqbfzKH6afWejGMo4Fq6ydr7fd16Ood3pqNVuRuYOUOpCt0EdWf98cf6K4AuHKwq3ex03RC3hafw7lJ6okeRxoHOCRRFhmcNA27O2gO2qoQ+boBgagg+7w4SOU8P9BwwKOvwx/ii6rs0jQz9GDTGGi6q7ktcHG9JYXEa1zB7nKTuP1qexju9Gc5YDKYhjjOatVd8C+W/CZnR+AZWSTALwEEhTUTMnDi4NmcFgUZGFHimS+3eQ17HIh7+xSUbVseCNZ8310JXcxlJnlGJ5XHuwFvfyuUKSizsnM6We2i/0nSoI2F000iz/saomuw5uUQcjo2kwGc0tt9GYEs+DhKmyn16Oejvzx5yQ72FEIeZcBzcy2kAp/u5wI6pjIUOw+/jjASqi8EcMns2bYKkWku5OjMWEfZ/gr2WszF4GCIaTQdRBEs1bzIcRM7pc+NPU3AGgxc6VVYMeB4nAH8YCkNKJUXOmyGEj+U39NwUDKQdBCaHaUdSjMOBDQvQpcxAKpiBEUwHg7aY6S8a2PHSrHt4TRJPxtcZus4KQ8RRflX+ERkhR2OWThu1Q9kmUBDnYDC7d1jAIap8ZyWTUvpVyseC2B/NYt5uFgDoiQ7LPYTWNBaNYdr2YKxJmU3Q3jSu3RkrzCy83KwFoGRMUzrFgZOzCtPHij7i/CuB1XUROlM6grNa93lWoxDDb4C/U4WGRxxbSH+/xdOFaNTDox5lGCDpMkOi1yqZAbJBTM7swnBIlu4M3MwZ6k9VgfXHFlD8VhvTg84pRw/V3JE1c48zGjOvCGVWOmfLTy2YbGLeEsQHD0M2VaYwqoQI1JOpr0XuD+0zJtHt+srDX4zmE0LXzsU2guQfCt4iGU9ooobfSfaU/wkzizoWTdmjHc33mBGVdAZoMVN88kK0b2IoxGA/tAf+PXKXvuSzQmuGFvZrvj4WvlYVbdWGom87DZA96FdJ8ozseRJmCIBrrBliJoaZnVAlaIO0MStmR8MWfDoQ6nQGQ1GVZowHdR3zzPMi6VXR0oZgjI+eJ88o7bhZ5TbkQWlqLtpDezizvWdUTEE4CGbDKmEgaZpqjDEa7ZHl8qEy4ZCXYdLxiOYZJZjUlUzmsoPn0zBTPmvR4CRZ6jEFnuaYAQtlFCDoAkEBjMDtLuL6FJcx4LCHodDkXAKd65PI4V70IixzsEugBwQFUqBwExwH7fECe2oHUT9eNCH+1q3s98AZ0TQCwFAY17FxAkNHvc7lpkyfYAOwGng/Xa3zw0VAHGMPIVqJ1UrTL4AGP1R8PEsrAW3izJgZD6H+tgihWY73QoMzgQvIafoxNNUmTDR61Cibgs5RbDNAztKN0sNzCMKBSzQ6+RkeBXW1ugxV56KXcfaEenEBGisVIwEZNYLJI85WGtridmesELH69JBMmI5lBLQNR7kU3g+oFxoeg1zlLln3xdtC1JZf3zCM2oJvB1tHS/yWBxS6fSjUHtISafwP3IhLgsSQVlzv1PpA77JVB+BzT+t7MlZpD41/T+pzvsfyu8curqH+5Jr7dVmkU0no825TgE5vRw9z3P3DaOD0FHv8rr3s0dETdYmRwu3axSi3lplYraMxerMDHylV9324VnNoBGNhJNKY+co38FPHov6NjpTZu4KzaBalG683MMBWA/SZ9PD4uHQMEWnjNQykWDMjmIcpCguxGbxNuSWLoPYY/uoTLixtN8jZsdqjNNK3vxjHcwQ7GBmLDmw8hoeM5TPbmKKBE6GpFhgq1atDJFivG9nQ7QXqANOGo3x4xoXWEPVX7wdGNoHTSDb+GxiddYLdCwY1M0+DzsjZ8jSsJGknsoZZLUeRFteZtsJYWuicFBp8gEWdC9/dpByTkyFJA3UZx0+YIPEdYHTGqlaNYTQ6OHTPEM7NgpVXGVmt0PoGF5QoN3x57M2z2k7EO+AYA2eoIB5DvJDjSL95NNOnG+kCsSIczMrvwbAOwZqvuCD+aT2niI/iQzWorSfCNEGO2WOMlQ0DgxrT6h8aU4PGeWlKD5QLDMyGhZkVjW1LULZ0wrp4rJdanZgF65qvL8MIDWEDn3+H7zXzWRnHXrde0SnCQXspvIAjWOs1/0ylaY2MJ5VYGMGgZxH6+/UnXAJjWbH4oaOzP0RGaEJlGioGazoLFEUgalZI7m/jhgCF+c344Y56GdM4uJi8dSmXUEgI9LRPDCdBcM6bDV3IdatIQDzG3ybZBU5v9sSdOHokE5Zy6EJtJTJrPtF67C2kNwf1J+eP0Zy2ZBtIaDgm9GCjA63c2kg5nyh9icvw2oU3o/xqozf1UQ5f3AyiNkSc3kxoZ/JRMDZe766BqeBjNVrh6KJDojj4utfgecqPXxpzGv0aCHGjtEOZ6WvfAYyxgn9TtfR68M3LNV7/QFbJ+jRw7nRlEg/x6HbTFmSbPyP/PI07r+XzYpYNv7rJYSWFb/d02L8ChEkBV35oimBDpJyFAHpnTIM5Y6bmpRMtDbXL8KrlXvLWVDnk12zacNrM4KDFrUPh1a1e3HjAXS3gFZYzQF19ndC7QZZUTgrB+ksjIncDb9sGpZb+TYyDBlAYtB+9NrPPBY5yy8rhz6dhDZO46d+2S5ncw7eNEJhcH8ZxmYgVC25/o8koLxVbUdSwsxt6I8uPjRpDHjNoLPqrujAC8R3da4ZDkFjZGxxKEcnp+vDiJ42xYp7AApuProPB/0r922H7IScnySyNS7FM3UJP5g0cgUKx4ejGXMG5poQBMOt55x2i91zc5j/i4Uo+IY6ORZqjbDiCaB4XZDoN/ZPM+h/DtkYFG9CvV+zggVkBtiqvuqHtQEmjJ+0lUtXhRRDBJIFioVwv0vDwYW0cxISd3q9XRT+Ckm8wS3+CazfrzzoqZIxuD6Ncs6pGmS8bWzeqY18fNs7qpDo5uoGAdF7wgWmNrXiNFx1vjCPoxk1hoEyDeEafzBzEZ+TvsHuK7az3cph8bfVToMVDylhkRovTIROOYsPBGCt8ZyXGTlrn3qbRhrAOSPDpSzD2miekhCmos8YIxOdR3o891otDOt4t06dnM83srIS4xGH0BYrrwSenYzH4nbgH4fR4FewNRDuEcbqEU+cYXz0O2hhrrGzmdNEbyjVaJIjpG+BDTuhTmxMlFDxHQTz6Z8VZnSi16888gXebVbcQOVnPNggf1i6V3gnazCEavIfBEW1Wimaht8Ab5GLzwPWVM0GHjj1Y03W6UP/jDBAFQr3DsAL5sp02NzAwK+5eokkHB+ry8MMw++x6F/JppUhXoZLRsTmZgs2RexXcDaA10CIh6+K5Q4tOnArPRweh4IApCe1jQPPD08pgmghPTBfl3NOziPwhY9nSBU+K4e6TGNvkz1n2zsaXynm0DhHoBgPoIAQ69FOx4zbzd+GMKGZUK70Un3ZbiV5vJfHIkOtw5HTv3q7povqrIEUWaPxYp7+ctrMER+r7BD5CeLBytwlTjTDCpZZ5UuqZBViaUes0dEC6+ix4r0mfbdtoYeemCgzNEPeUwmEBml6XNDuk6eNGsPgQEPUszfHs5W9GuXHGVIOxtmj9E5yUt3gTcKNHT3veHBT9Q9haD0MyoDzKInQYktRdOdtuFslsTbtkxSkoC2bfWONTOkenyMps637UeyrqtkDuuQeNAghmGZKtEwSd1nPDLoASMIruRpFXgSlQdPypZ8qee2GHO0Lr7jHEb9yIkSq6UduCgsXLvyLuD3SLGzgAmLgkhNfYkEHITyb0ZdjFOqWMk1z8sdBx2BM/ieNrzsBBXx9Bzq9XBNwitafKHg2U/hEd5kRmyQRUkrtmI/koSj1XkpLpXaLOc1AA0RnFnQ5878PvR1C447Sxq3r2Tza9lVP1BJpIfk8rycpq2ZlZBkbG8DTCL1x3eSgGh+EkeTdcfT4PYyjtGARKLuqH2MWMo30SnkSDhWlCUwLcrb2USr7zS2XJik9huv9JxGeDzNG4cXS/4tdjBtxiPfs9TT6EvYHHg1GP0DhddyHp2+aF0p7LX5Se9OpcsOyvYYA9WyP4dLPmw/OtdsP3iycOpt5oePSJplI0BEoTZcc7j00YBNKWxxGtveLbEAI/w/nyJeT/E3xT+04wmh2AS5ft0qQT0d7XI+4O3fPoki+iLPy4OLHQC5Ua8tOyu7qRARJGPX0g1w2q1EKG2MFM99QERwPF8fEYIi5DIf4U8cybwbnHpJJtChB3r6Zn46XyAZl86N+jcL+PhqhgJ/Sx+m57sgl4HgFiPGLreuwuwT2YFPpNeeps1dU4U1GC4twAX1mHgh7NLmBpFEvzQjRjAVel8r1LZ3+Co5YqPQthHISEAlgj2sRDXXuhhKdheM+QR3IrWxj1YTkOl0rvRWC0V+inX3w6VzuRyJ2Moh1O5Bw5fNZ1kC5naqO56DjFFKbuGdoRfqhp2kYMHgBS6fkwVI8XanwX/SKjBUYVeHlGfV9F+OtQt0Ng1J+lcTzFzggQZpKOyjji6bCnSwKUOh+R7c98Dd3t4xmGk1S/5RCZJqfi/NnH4ab8MRna/RndtufFpHmw1jt3lwxtewBpbdTLkPAnkv5MNJCLkzqn0jEKjkz1KCO67mLHLLiUh72uXQvlF+Dc3SrZuIwTQTEvlX8f722anmSzqfWrYRNKH9Der2coYKwn0/Icg7Iz4vvMf0gwbS+VXotMYG3mJkrNg03XhNanZnj73c6d6Jlw0dUy46URcnYWjfsSt1pjIZMIee2sbdN34SCzWu1OLMzSSo3lKZxhagfLsRGAC96cPdNBk/QeSFYLE+z9K5epl9LexDgna9zxXBy257PSKWjEzipC9QLl8xuIEHjpg3Uc6PwWlAlHQeEoA5dJTy56jwRhJumx2YUzWQ5f/GYhvzO09vJ/l9rOc7GT+1/lzDPpuZKdrMw83WsU7bGHfVG2PfFneu9wPhbbgco/dS+f3qLqQ7AqaCS7QPEcMALdf/fPkeIWNLC98dCgyZkEFsjLT+0Frnv8PWAazFrQelzEtC1EiMfGamp7mkaHNU1JduF7Srm5eu+h4PM9mVKHHiqHcp8WOuggGhEXSx2ehv/GmSswdROBqx3xKg6twtGNBA4TD+KycoEJVe8yacZIu565A/X9heoimp4+vQDVTdChHrlni2ypPggpiB3JJC7KToc/kkpxuoyAmmqMF5zdYGVCk6E5PHY5U71IkttBF4yRWNMlk+fp7Medjw2FHptxI3eilKunaeFibKIlVCa/AvnOwR8XvdFOGJYX4iRC8se8eXXpX4DNHfJmY0wx33jBEhAhMK8+2MW4nUsF6twHBY3EYtNbU7K6mC3VUNl0EPe2fPN3q+5H6O1ZXONhVr4GH4ykdpPG4yV1/6OilTgCMLZPs0rKvdoYQbRGmJn4zNksuG3k04X70X6bRxqioZBhBAmgW9aZN5ZtWAbjVK4TZgvQCCId7MjEH+bowMgmjb3/T6XTP0Fy+9Tqb1N31g90YhvhbE9CE6s+jnhxUC2MocxTlow19dDZ+JTLLSjnvVoW62h0m4GrC0wR9ap1dO46VJqOmANKh3ozIuOyc0fRezWF7ijHnYsWNGaJXFmJcZqN6zlD45C5ju19G+LATZ2VhK9dUoOZAYxP6Fd+0dtwIUHM+V5vkvVgDrrIUKFjETh00SXmVimn/6NROHsioRMQ2ZiQpaXrBQv9A1l31f+Cyw3v0NDNwENbCJ95Ih+GWeyW8Tggg0C8bHim1HHdQ2rigAyNni8szxZHvGChZwqCPmfpscrSgCj+ifENQ/Ce3hd9fZnk4U4fhrEamZsMS6KBDAJE6T9qQzfD2ZhYDJZvWgRcnXxX7zl8sW70x/L+ThkqDWp4b0Qus0bXgOxCBlHpZhXX0BTT+gSn5+jHj7TeNIJN1XceRx+pWUDDOQwy73/Hhw0wTAJsIwducstp+qLt4mAcVlKhA9AHC6dGyKJlfyWLl78K55B+EKHvUH96EBXvuJ+UcT6Ak67n43RsnIPqPs4AgHlDRNE98svs7I6BAcNs7/VKJDRc8hz2WK6+4nYU/yvZJ04ogrMGx6ZG7pK2RVAbOl36DYhprj9B9LNSym9XKT4qjIzLc9JT/y2dVfBbPJUKSO2vx5E8d2i8JPkpCAordjbceHxahEzVN4ENb0ZTOqNFmKX0wSitO1eYcp4mR0AZpwlzmILew80BGdSr38fwRD0Ji+YIrqc/ke98xwx5PGfTGoplMZ0xzIzDp/Ui/28o1w9RbiTGjI2nu/j033BmxA8yGkAdqP4zJBQnKBwW2AGJb5185VLT2ao4eC3GdvterQa4QQESB94ArEvYcMrF5Ft+wuH3Ni0rGZQnNvuqMU4qX81mymwrm+Kn6eoMH3+MBqTRLrqdtEHwyUq59qfMwg6QMUJ0AUaVK5HiYrQfdUSGsyGZDxaZ46PwdAnKCtNExBMMLR1pmvjb9fBbEyIZvmbexlh8tgVOJKj/JTZJ3Cw9OBaot7eE++/J0HZjmPX4YDWZkMgoppPkUmWW3j4Mg0Nfl2MO+7qiZgMFfIKD2WpDD8nEiX1o7E0QyZ/ROCToutV3oeG+LVOmYlfL0C2yPfo3GOr+QbZsvhBM+z2NV+vB6cjp+TAYvg/1/ZmGyQalEPSc23FC8Plo4BUwKZg9hWVbd9XP0SW+KZOncHh+TGogTgA39B1s/hjUcku2szrMnFAYrZsaReEDlWDI6ZvYa1K2/ueKgvVip/nKmkfAbJ9RZpgwER/LrN0o5TobycBP+CVMLStx1ud7wdjGJJRgCdI89dSHMPn9d41IMwePdUrTNSqN2LGS+ufUB72fNLpiEA1+NTo7HAd7OVSuxoH+39VyEkFcvkV2gDZpgtOpZ2C4U2g2dGgH2uvCycnq8gQm4kc+SzgukmeGkWnyHqa859ohv9QRx3P0nkyndjPwnsPoRBgEE3YAcmcT2ChknHNWnIyZG8ZXTrmrX0Ylf6EV4TsDpvOyYsV02ePORSawY1VX47ynR1riBXyLVrwRJXkrkvwrZiLf0cLRHYX4Fq04AbiWguTfwscF/jvDH34sn/BkvyEs/La+NY9Hr3idW4Y8/0OuvvyfNU+ewU4j6MIVV8qUyUtl2/aL5ZrL/1yof5mOGXAZ7oXL3o5yvwG9FThWXY+XIU/75bHYU2YsRvjRkFZfUkkc6hwwNX9D2maI4eOzxyk+E6QevQ93u/CRgCv1IwEB14KVh8HBbwloBD3OX6HnV4R65rF1ug84+IXcqPQDMBeH2SCZcAcG00mH1m04hiDdmkyXxYfpaO2qm1raO5ealW2FUJAmEaVL4uGEaqbN4wyNYEd05/G23jMN4qLO85UByMTW84iXUsWGqmZvZHxOddkrm0yf4cnS8qkdFq/8Twy3b4C0WwFGvwJpS/jj0J+HkcrNeKPXv1O5O4V1wtUIow7Xpj+1MlU3GlhdQlyeS18q/y9ICl+zxpCXr+/o90xn9rn7sXf2lbazpwMdMuIMR2gMYg3IMtiMZHg8Vt7eh3f5Rg9hgTHZ+Calmm94Zzj0ro2ArfHG+aRKtbFmmFHxiWejlib+GPrTizGz+iO56rJvCoccrsO1Q6BD53IzNuvDv251a8c40rPRwSQ56ZinZZ5GxJF/NxJOvrMOcM45+FTM5B8jKZeyWoe90TCE9zyQrlTGhtwE39hZ9QcN3OF97peZHhwQeu5ifD2CSxgRvCQ9jsm++rIbVWdquCcfcOQwxuIpy1PLYCzYEO3c/Y660Si1x3axHjBW9eNQLz7ZtUMCyd4gHyXvffR1+MYNLdgxFqd56GtSM4U/KLj7aNGfm2Jt5Qx+V6ZP7S1Km5VGMYZUQJhxdsB28DBWsA779DSbfcH/KM5W5jvYYTrQan8NsmFz/Xr40D+LbbTUr2iP5OG8u/bYLDeYZzpQ5mBhLKc6FF1PvPyR6YXRo5nySbKMR2fpQMZ9PsiGQ6/7Q/euvvqNQzWT3ammlqC7dan6wcFYwQC6O7kQ9IChDxPONNmoNDGjbxfyHCDBof40CJtpYW86EozlZBcYmwkdFp41PLsc+IxFxjF72dtgSb4QRk04H6L2zpmxNQyReaocaPdNA3DTPXncdcxO/PHelvZGSX/gM5atbWKaEs3GjIZHiWeeFKkx1ggK6Ci02w9fc1f7XhUb5gnoV3V8FqaO7f6EUSY8Bz5jNeiI1X06FXLPoJNHsZ/U1itHUEAbSff3m4ZUHnac0Vhrli0848sYu5++TxO1GqSH4TnwGWswqzO3/NOYywVUD3ceHixHA+iBr7g3G71ED1DWODMeN9+MdmeOfWn6c10SG4NeeuAzFlZJFRoHiXEsSL6hYU3dw+IcqNcw3KeyCWuF1C/HOSCSEcGRLu7q2NdOugOfsWbOtBlQGu1Wj4YEH9De1vdtJcTBMAyyokEfqtbwkSfscKY7UVhcbueI4c/KUfASqWJ3NPYDAPqxHD4KHPiMFQiAY+HgtvMUXFgukPWX7D6ohkHqQxz+uBPHwx+OfnEu+6hBoE/33+DYd69sffRujTYGg/KBz1hBKnm5Dfar/yfXXvlDEKfTYnh30h5Ib+qw5VWrP8PqAzwT4fk6OmRu2eltcv31u8baIQ98xgrK+ZovPoAV+RtAR+oXNjyOTtQDJwY9PDhZ4QcD0voiOO5thCctTekjM5ct3sMu6tkhuzr26bvc5WBgrGZ1D7ZZYLPmdschkTM6etgm6RIYi5+ENZ3M1V1noj6m55SWblYkYSLQjrvteZyzg7bUxeP+SQEyl3rSrsR5FP5aVMIOs22fLVLBj/Xb1hultuMVcu21PLNjTBL/4JJY+ycbPPelpt5J6X3NKu5RuBBGYyrzuKWhLwfc2ka7n3O3K1ONQ+IXjJWj40F06xsfR1h7+edh2/oMPEPBWdxmlwfoZdwmF75JPQ67X8FYeToeTPdBmWedS8nH4fS4DmaIVmWeW++4PzWO6Hk6LigYa1zkOsAiU5nn8MbtbkPl90NJ/x7MEMZcql/F9LXfLEPVO7Xm3P43RuDAWsDBToGmMn80lPlvQq86RS3tFVhSfXoDNpz8jhpYu2+qGUbBQmINI8lBGMAZIpnrmlUPY8lnITZb3A/mwhlikDtJ5l4U9gyMkTwFY42RUAd8tMBc+p1oWQQT8hY7xiG66YCve1HBXwMFKLkIC1e8G98yvFWW6FGgDCnUJlKhgL2mgDHQ0qXl7PiDvUZUJCwo0E6BQjq1U6R4fg4pYJb25xBhgaqgQEGBggIFBQoKFBQoKFBQoKBAQYGCAgUFCgoUFCgoUFCgoEBBgYICBQUKChQUKChQUKCgQEGBggIFBQoKFBQoKFBQoKBAQYGCAgUFCgoUFCgoUFCgoEBBgYICBQUKChQUKChQUKCgQEGBggIFBQoKFBQoKFBQoKBAQYGCAgUFCgoUFCgoUFCgoEBBgd8YBf4/oGfxb2RYua8AAAAASUVORK5CYII=",
+                      "operations": [
+                        {
+                          "title": "List Asset Vulnerabilities",
+                          "operation": "get_asset_vulns",
+                          "description": "Get asset specific vulnerabilities"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "operationTitle": "List Asset Vulnerabilities",
+                "step_variables": []
+              },
+              "status": null,
+              "left": "660",
+              "top": "380",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "44748b05-234f-4c52-9143-41d3701d0937"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Configuration",
+              "arguments": {
+                "owners": "/api/3/teams/6e569c09-3bd4-40f1-98b0-cc994464c3c5",
+                "old_vulns": "[]",
+                "asset_iri_dict": "{}",
+                "update_payload": "{{@Body}}",
+                "vuln_table_name": "vulnerabilities",
+                "asset_table_name": "assets",
+                "vuln_module_type": "Vulnerability",
+                "search_asset_details": "[]"
+              },
+              "status": null,
+              "left": "180",
+              "top": "100",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "uuid": "8bdaee5d-bfff-4b81-9b5d-a19924a1eb6b"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get related records of asset",
+              "arguments": {
+                "when": "{{vars.asset_iri_list | length > 0}}",
+                "script": "/wf/workflow/tasks/crudhub_crud",
+                "for_each": {
+                  "item": "{{vars.asset_iri_list }}",
+                  "condition": ""
+                },
+                "arguments": {
+                  "method": "GET",
+                  "resource": "",
+                  "collection": "{{ vars.item }}?$relationships=true"
+                },
+                "step_variables": {
+                  "_temp_update": "{% for item in  vars.result | json_query('[].\"vulnerabilities\"[].\"@id\"')  %} {{ vars.old_vulns.append(item.split('/')[-1]) }} {% endfor %}",
+                  "search_asset_details": "{{ vars.result | json_query('[].{asset_param:ip, scan_id:scans[].\"scanId\", scan_name:scans[].\"name\"}')  }}",
+                  "_temp_update_asset_iri_dict": "{% for item in vars.result %} {{ vars.asset_iri_dict.update({item['ip']: item[\"@id\"]}) }} {% endfor %}"
+                }
+              },
+              "status": null,
+              "left": "508",
+              "top": "280",
+              "stepType": "/api/3/workflow_step_types/ee73e569-2188-43fe-a7f0-1964ba82a4de",
+              "uuid": "c1f41d47-0ca0-46f5-8f49-dd5988bc8e9f"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Incident",
+              "arguments": {
+                "resource": "incidents"
+              },
+              "status": null,
+              "left": "20",
+              "top": "26",
+              "stepType": "/api/3/workflow_step_types/9300bf69-5063-486d-b3a6-47eb9da24872",
+              "uuid": "da6a3f0d-fa00-4ec4-addd-886ffe0e6527"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get all linked assets IRI",
+              "arguments": {
+                "asset_iri_list": "{{ vars.update_payload.assets }}"
+              },
+              "status": null,
+              "left": "340",
+              "top": "180",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "uuid": "feebabb4-05b9-42fb-a998-17bbd8efd3cd"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "01a021f0-a23a-494b-a294-2fcd680ba838",
+              "name": "Incident -> Save response",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/8bdaee5d-bfff-4b81-9b5d-a19924a1eb6b",
+              "sourceStep": "/api/3/workflow_steps/da6a3f0d-fa00-4ec4-addd-886ffe0e6527"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "09238774-e13a-4c40-b730-3faa901043c1",
+              "name": "Get related records of asset -> List Asset Vulnerabilities",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/44748b05-234f-4c52-9143-41d3701d0937",
+              "sourceStep": "/api/3/workflow_steps/c1f41d47-0ca0-46f5-8f49-dd5988bc8e9f"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "315b855b-655d-47e0-9073-8220857444fd",
+              "name": "Get update payload -> Get all linked assets",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/feebabb4-05b9-42fb-a998-17bbd8efd3cd",
+              "sourceStep": "/api/3/workflow_steps/8bdaee5d-bfff-4b81-9b5d-a19924a1eb6b"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "9f198512-5a2b-4c99-89ff-140751782c32",
+              "name": "List Asset Vulnerabilities -> Call Handle Vulnerabilities in CyOPs",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/09498fea-b73b-41ca-8f7d-298556c62791",
+              "sourceStep": "/api/3/workflow_steps/44748b05-234f-4c52-9143-41d3701d0937"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "d3a3e1f9-c0c5-4944-95a4-b87f9acfc869",
+              "name": "Get all linked assets IRI -> Get related records of asset",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/c1f41d47-0ca0-46f5-8f49-dd5988bc8e9f",
+              "sourceStep": "/api/3/workflow_steps/feebabb4-05b9-42fb-a998-17bbd8efd3cd"
+            }
+          ],
+          "uuid": "556b3bc0-0b9c-45d5-9a8e-e60004268137"
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "> 1.2 List Scan Specific Assets",
+          "description": "List scan specific assets.",
+          "collection": "/api/3/workflow_collections/6d86c1bb-c132-46af-ac41-0eb271f1c12e",
+          "tag": "#Security Center",
+          "isActive": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/4249bd85-3313-49d4-a7d2-036cd49f40c5",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "List Assets",
+              "arguments": {
+                "name": "Tenable Security Center",
+                "config": "1c5b1a56-c39b-4b0c-9967-db844016bf9b",
+                "params": {
+                  "scan_details": "{{ vars.name_id_mapping }}"
+                },
+                "version": "1.0.0",
+                "connector": "security-center",
+                "operation": "get_all_assets",
+                "annotation": {
+                  "id": 441,
+                  "name": "get_endpoints",
+                  "system": false,
+                  "category": "investigation",
+                  "connectors": [
+                    288
+                  ],
+                  "displayName": "Get Endpoints",
+                  "connectorsData": [
+                    {
+                      "id": 288,
+                      "name": "security-center",
+                      "label": "Tenable Security Center",
+                      "version": "1.0.0",
+                      "icon_small": "data:image/jpeg;base64,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",
+                      "operations": [
+                        {
+                          "title": "List Assets",
+                          "operation": "get_all_assets",
+                          "description": "List scan specific assets"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "operationTitle": "List Assets",
+                "step_variables": {
+                  "assets_records": "{{vars.result.data.assets_records}}"
+                }
+              },
+              "status": null,
+              "left": "160",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "00aeb024-4605-4312-ae92-db6240d38870"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Handle Assets in CyOPs",
+              "arguments": {
+                "collection": "{{vars.assets_records}}",
+                "workflow_iri": "/api/3/workflows/b4ea9d5a-ffc5-4576-a7b9-c9700383bebb"
+              },
+              "status": null,
+              "left": "360",
+              "top": "212",
+              "stepType": "/api/3/workflow_step_types/b593663d-7d13-40ce-a3a3-96dece928728",
+              "uuid": "1e946679-31f1-422a-8304-fe4b26f1a2b2"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "arguments": [],
+              "status": null,
+              "left": "10",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "uuid": "4249bd85-3313-49d4-a7d2-036cd49f40c5"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "5bd41717-7a5f-4be7-99d5-68b81fbb9c5f",
+              "name": "Start -> List Assets123",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/00aeb024-4605-4312-ae92-db6240d38870",
+              "sourceStep": "/api/3/workflow_steps/4249bd85-3313-49d4-a7d2-036cd49f40c5"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "94918b00-6976-4b51-bc4c-d1cc628d0769",
+              "name": "List Assets123 -> Handle Assets in CyOPs",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/1e946679-31f1-422a-8304-fe4b26f1a2b2",
+              "sourceStep": "/api/3/workflow_steps/00aeb024-4605-4312-ae92-db6240d38870"
+            }
+          ],
+          "uuid": "f587c3c5-140e-4f58-95fc-75c09c119c1b"
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "2.1 Create Incident > List Asset Vulnerabilities",
+          "description": "Pull asset specific vulnerabilities from Security Center.",
+          "collection": "/api/3/workflow_collections/6d86c1bb-c132-46af-ac41-0eb271f1c12e",
+          "tag": "#Security Center",
+          "isActive": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/ee73182b-c66f-4946-be63-9ed438dcb3a9",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Call Handle Vulnerabilities",
+              "arguments": {
+                "collection": "{{vars.steps.List_Asset_Vulnerabilities}}",
+                "workflow_iri": "/api/3/workflows/6a90df40-60bc-403d-ac9f-82d76228e313"
+              },
+              "status": null,
+              "left": "860",
+              "top": "433",
+              "stepType": "/api/3/workflow_step_types/b593663d-7d13-40ce-a3a3-96dece928728",
+              "uuid": "01099baa-2f55-41c1-b1bf-93a4260037cc"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Configuration",
+              "arguments": {
+                "owners": "/api/3/teams/6e569c09-3bd4-40f1-98b0-cc994464c3c5",
+                "old_vulns": "[]",
+                "record_limit": "10000000",
+                "asset_iri_dict": "{}",
+                "scan_table_name": "scans",
+                "vuln_table_name": "vulnerabilities",
+                "asset_table_name": "assets",
+                "vuln_module_type": "Vulnerability",
+                "search_asset_details": "[]"
+              },
+              "status": null,
+              "left": "200",
+              "top": "100",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "uuid": "7d3ffba7-7f2f-4de1-92a3-d82cace88613"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Find Asset Records",
+              "arguments": {
+                "when": "{{vars.asset_info != None}}",
+                "query": "{\"logic\": \"OR\", \"filters\": [ {\"field\":\"ip\", \"operator\": \"eq\", \"value\": \"{{vars.asset_info}}\" },  {\"field\": \"hostname\", \"operator\": \"eq\", \"value\": \"{{vars.asset_info}}\" }, {\"field\": \"macAddress\", \"operator\": \"eq\", \"value\": \"{{vars.asset_info}}\" } ] }",
+                "module": "{{vars.asset_table_name}}?$relationships=true&$limit={{vars.record_limit}}",
+                "step_variables": {
+                  "_temp_update": "{% for item in  vars.result | json_query('[].\"vulnerabilities\"[].\"@id\"')  %} {{ vars.old_vulns.append(item.split('/')[-1]) }} {% endfor %}",
+                  "search_asset_details": "{{ vars.result | json_query('[].{asset_iri:\"@id\", asset_param:ip, scan_id:scans[].\"scanId\", scan_name:scans[].\"name\"}' ) }}",
+                  "_temp_update_asset_iri_dict": "{% for item in vars.result %} {{ vars.asset_iri_dict.update({item['ip']: item[\"@id\"]}) }} {% endfor %}"
+                }
+              },
+              "status": null,
+              "left": "360",
+              "top": "180",
+              "stepType": "/api/3/workflow_step_types/b593663d-7d13-40ce-a3a3-96dece928770",
+              "uuid": "7f6fe154-1ea4-484a-99c5-3e425ce2dbc7"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "List Asset Vulnerabilities",
+              "arguments": {
+                "name": "Tenable Security Center",
+                "config": "7af198cf-7be6-42fd-9fb9-eebb364da45f",
+                "params": {
+                  "scan_id": "{{ vars.item['scan_id'] }}",
+                  "scan_name": "{{ vars.item['scan_name'] }}",
+                  "asset_info": "{{ vars.item['asset_param'] }}"
+                },
+                "version": "1.0.0",
+                "for_each": {
+                  "item": "{{vars.search_asset_details}}",
+                  "condition": ""
+                },
+                "connector": "security-center",
+                "operation": "get_asset_vulns",
+                "operationTitle": "List Asset Vulnerabilities",
+                "step_variables": []
+              },
+              "status": null,
+              "left": "700",
+              "top": "352",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "d836ee2f-a62b-4aaa-9f45-2d4968fea9e3"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Delete all existing vulnerabilities for all assets",
+              "arguments": {
+                "script": "/wf/workflow/tasks/crudhub_crud",
+                "arguments": {
+                  "method": "DELETE",
+                  "resource": "{\"ids\": {{vars.old_vulns}} }",
+                  "collection": "/api/3/delete/{{vars.vuln_table_name}}"
+                },
+                "step_variables": []
+              },
+              "status": null,
+              "left": "530",
+              "top": "260",
+              "stepType": "/api/3/workflow_step_types/ee73e569-2188-43fe-a7f0-1964ba82a4de",
+              "uuid": "e10b1402-1f74-4923-ac5d-e91b53ada18a"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Incidents",
+              "arguments": {
+                "resource": "incidents",
+                "step_variables": {
+                  "asset_info": "{{vars.request.data.source}}"
+                },
+                "fieldbasedtrigger": {
+                  "limit": 30,
+                  "logic": "AND",
+                  "filters": []
+                }
+              },
+              "status": null,
+              "left": "0",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/ea155646-3821-4542-9702-b246da430a8d",
+              "uuid": "ee73182b-c66f-4946-be63-9ed438dcb3a9"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "22d7a574-75d5-4aa7-a923-5e05bc7de97c",
+              "name": "Incidents -> Save IP Address",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/7d3ffba7-7f2f-4de1-92a3-d82cace88613",
+              "sourceStep": "/api/3/workflow_steps/ee73182b-c66f-4946-be63-9ed438dcb3a9"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "2edb673a-6ebe-42df-a872-8529db1fbc39",
+              "name": "Find Asset Records -> Delete all existing vulnerabilities for all assets",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/e10b1402-1f74-4923-ac5d-e91b53ada18a",
+              "sourceStep": "/api/3/workflow_steps/7f6fe154-1ea4-484a-99c5-3e425ce2dbc7"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "832ae14e-951f-4304-939e-c1486210b298",
+              "name": "Configuration -> Find Records",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/7f6fe154-1ea4-484a-99c5-3e425ce2dbc7",
+              "sourceStep": "/api/3/workflow_steps/7d3ffba7-7f2f-4de1-92a3-d82cace88613"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "8d22e0de-385d-4fdf-b7f0-306c8e6659d5",
+              "name": "Delete all existing vulnerabilities for all assets -> List Asset Vulnerabilities",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/d836ee2f-a62b-4aaa-9f45-2d4968fea9e3",
+              "sourceStep": "/api/3/workflow_steps/e10b1402-1f74-4923-ac5d-e91b53ada18a"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "ad1e362f-24d5-459c-b87b-8f4e52b44a8a",
+              "name": "List Asset Vulnerabilities -> Call Handle Vulnerabilities",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/01099baa-2f55-41c1-b1bf-93a4260037cc",
+              "sourceStep": "/api/3/workflow_steps/d836ee2f-a62b-4aaa-9f45-2d4968fea9e3"
+            }
+          ],
+          "uuid": "64e43ffc-3e74-4ff2-94bd-1bce677713c2"
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "> 2.2 Handle vulnerabilities in CyOPs",
+          "description": "Create and Delete vulnerabilities and build relation between asset and vulnerabilities",
+          "collection": "/api/3/workflow_collections/6d86c1bb-c132-46af-ac41-0eb271f1c12e",
+          "tag": "#Security Center",
+          "isActive": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/962e257b-d725-44ed-a22b-f3de96183324",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Associate vulnerabilities to an asset",
+              "arguments": {
+                "resource": {
+                  "vulnerabilities": "{{vars.vulne_iri_list}}"
+                },
+                "_showJson": false,
+                "collection": "{{vars.asset_iri}}",
+                "collectionType": "/api/3/assets",
+                "step_variables": []
+              },
+              "status": null,
+              "left": "780",
+              "top": "387",
+              "stepType": "/api/3/workflow_step_types/b593663d-7d13-40ce-a3a3-96dece928722",
+              "uuid": "46b7bbc0-9d96-474a-8fa6-91929103ed99"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Configuration",
+              "arguments": {
+                "asset_iri": "{{ vars.asset_iri_dict[vars.loop_resource.data.asset_param] }}",
+                "new_vulns_records": "{{ vars.loop_resource.data.vulns_data }}",
+                "vulns_create_records": "[]"
+              },
+              "status": null,
+              "left": "240",
+              "top": "100",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "uuid": "6a0016a0-272c-446d-a091-89a18038bc74"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Create vulnerabilities records",
+              "arguments": {
+                "script": "/wf/workflow/tasks/crudhub_crud",
+                "arguments": {
+                  "method": "POST",
+                  "resource": "{{vars.vulns_create_records}}",
+                  "collection": "/api/3/"
+                },
+                "step_variables": {
+                  "vulne_iri_list": "{{ vars.result.persisted | json_query('[].\"@id\" ') }}"
+                }
+              },
+              "status": null,
+              "left": "586",
+              "top": "300",
+              "stepType": "/api/3/workflow_step_types/ee73e569-2188-43fe-a7f0-1964ba82a4de",
+              "uuid": "74004917-1eb4-4c0b-b618-dab3791f5a6a"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "arguments": [],
+              "status": null,
+              "left": "40",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "uuid": "962e257b-d725-44ed-a22b-f3de96183324"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Mapping CyOPs fields with Security Center fields for create record of vulnerabilities",
+              "arguments": {
+                "_create_temp": "{% for item in vars.new_vulns_records %} {{ vars.vulns_create_records.append({'vulnerabilityId': item['pluginID'], 'name': item['pluginName'], 'port':item['port'], 'publishedDate':item['pluginPubDate'],'hostname':item['dnsName'], 'risk':item['riskFactor'], 'severity':item['severity']['name'], 'firstSeenDate':item['firstSeen'], \"@type\": vars.vuln_module_type, 'owners': vars.owners}) }} {% endfor %}"
+              },
+              "status": null,
+              "left": "386",
+              "top": "200",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "uuid": "d30f8c51-c8e2-42df-ad56-12f7f48d3e1a"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "3d3e1e05-d31c-444f-8829-b323f87b01cd",
+              "name": "Configuration -> Mapping CyOPs fields with Security Center fields for create record of vulnerabilities",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/d30f8c51-c8e2-42df-ad56-12f7f48d3e1a",
+              "sourceStep": "/api/3/workflow_steps/6a0016a0-272c-446d-a091-89a18038bc74"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "40cf8a7c-4343-48bd-bed7-55daafcc9003",
+              "name": "Create vulnerabilities records -> Associate vulnerabilities to an asset",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/46b7bbc0-9d96-474a-8fa6-91929103ed99",
+              "sourceStep": "/api/3/workflow_steps/74004917-1eb4-4c0b-b618-dab3791f5a6a"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "dea54fed-1019-46b4-9a5f-3597222c43e9",
+              "name": "Mapping -> Create vulnerabilities records",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/74004917-1eb4-4c0b-b618-dab3791f5a6a",
+              "sourceStep": "/api/3/workflow_steps/d30f8c51-c8e2-42df-ad56-12f7f48d3e1a"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "f897999b-0fd8-426f-91ae-cc9f7dfdfc6b",
+              "name": "Start -> Configuration",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/6a0016a0-272c-446d-a091-89a18038bc74",
+              "sourceStep": "/api/3/workflow_steps/962e257b-d725-44ed-a22b-f3de96183324"
+            }
+          ],
+          "uuid": "6a90df40-60bc-403d-ac9f-82d76228e313"
+        }
+      ],
+      "uuid": "6d86c1bb-c132-46af-ac41-0eb271f1c12e"
+    }
+  ]
+}
