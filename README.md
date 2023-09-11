@@ -1,1 +1,1 @@
-# connector-security-center
+# Repository to mantain Tanble Security Center connector.
