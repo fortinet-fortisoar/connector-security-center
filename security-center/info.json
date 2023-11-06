@@ -1,11 +1,15 @@
 {
   "name": "security-center",
   "label": "Tenable Security Center",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Tenable Security Center provide actions like get all completed scans, scan specific assets and asset specific vulnerabilities",
-  "publisher": "CyberSponse",
+  "publisher": "Fortinet",
   "cs_approved": true,
   "cs_compatible": true,
+  "ingestion_modes": [
+    "scheduled"
+  ],
+  "ingestion_supported": true,
   "category": "Vulnerability Management",
   "icon_small_name": "sc_small.png",
   "icon_large_name": "sc_large.png",
