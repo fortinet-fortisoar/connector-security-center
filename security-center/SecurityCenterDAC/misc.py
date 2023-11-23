@@ -1,3 +1,10 @@
+"""
+Copyright start
+MIT License
+Copyright (c) 2023 Fortinet Inc
+Copyright end
+"""
+
 PAGE_OFFSET = 50000
 
 SCAN_RESULT_FILEDS = 'canUse,canManage,owner,groups,ownerGroup,status,name,details,diagnosticAvailable,' \
