@@ -4,7 +4,7 @@
   "version": "1.1.0",
   "description": "Tenable Security Center provide actions like get all completed scans, scan specific assets and asset specific vulnerabilities",
   "publisher": "Fortinet",
-  "cs_approved": true,
+  "cs_approved": false,
   "cs_compatible": true,
   "ingestion_modes": [
     "scheduled"
