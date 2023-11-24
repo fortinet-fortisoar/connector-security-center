@@ -1,3 +1,10 @@
+"""
+Copyright start
+MIT License
+Copyright (c) 2023 Fortinet Inc
+Copyright end
+"""
+
 from connectors.core.connector import get_logger, ConnectorError
 from .SecurityCenterDAC.scan_handler import SecurityCenter
 from .SecurityCenterDAC.base import SecurityCenterBase

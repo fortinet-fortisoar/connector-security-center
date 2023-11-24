@@ -1,3 +1,10 @@
+"""
+Copyright start
+MIT License
+Copyright (c) 2023 Fortinet Inc
+Copyright end
+"""
+
 import time
 import os
 from configparser import ConfigParser
