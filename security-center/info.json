@@ -13,7 +13,7 @@
   "category": "Vulnerability Management",
   "icon_small_name": "sc_small.png",
   "icon_large_name": "sc_large.png",
-  "help_online": "https://help.cybersponse.com/support/solutions/articles/17000065312-security-center-v-1-0-0",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.1.0/tenable-security-center/776/tenable-security-center-v1-1-0",
   "configuration": {
     "fields": [
       {
